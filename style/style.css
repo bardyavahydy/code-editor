@@ -1,0 +1,212 @@
+@font-face {
+    font-family: 'vazir';
+    src: url('../fonts/vazir.eot') format('eot'),
+     url('../fonts/vazir.ttf') format('truetype'),
+    url('../fonts/vazir.woff') format('woff'),
+    url('../fonts/vazir.woff2') format('woff2');
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --color-cc: #ccc;
+    --color-75: #757575;
+}
+
+html{
+    font-size: 10px;
+}
+
+body{
+    font: 1.6rem 'vazir';
+    --primary-bgColor: #E7E9EB;
+    --primary-color: #999;
+}
+
+body.theme-dark{
+    --primary-bgColor: #38444d;
+    --primary-color: #ddd;
+}
+
+/* helperclass */
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.transition{
+    transition: background .3s , color .3s;
+    -webkit-transition: background .3s , color .3s;
+    -moz-transition: background .3s , color .3s;
+    -ms-transition: background .3s , color .3s;
+    -o-transition: background .3s , color .3s;
+}
+
+/*  */
+
+.code-editor{
+    background: var(--primary-bgColor);
+    height: 100vh;
+    padding: .5rem 1rem 1rem;
+}
+
+
+.container-btns{
+    display: flex;
+    align-items: center;
+    padding-bottom: .5rem;
+}
+
+.container-btns > div{
+    cursor: pointer;
+    width: 5.2rem;
+    height: 5.2rem;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+}
+
+.total-container-btns{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container-btns > *{
+    margin-right: .5rem;
+}
+
+.mode{
+    position: relative;
+    display: inline-block;
+    background: var(--primary-color);
+    justify-content: flex-start;
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.mode::after{
+    content: '';
+    background: var(--primary-bgColor);
+    position: absolute;
+    top: calc(50% - 1rem);
+    left: -.7rem;
+    width: 2rem;
+    height: 2rem;
+    clip-path: circle(50.0% at 100% 50%);
+    -webkit-clip-path: circle(50.0% at 100% 50%);
+    transition: background .3s , color .3s;
+    -webkit-transition: background .3s , color .3s;
+    -moz-transition: background .3s , color .3s;
+    -ms-transition: background .3s , color .3s;
+    -o-transition: background .3s , color .3s;
+}
+
+.container-btns > div:hover , .theme-mode:hover .mode::after{
+    color: var(--color-75) ;
+    background-color: var(--color-cc) ;
+}
+
+.theme-dark .theme-mode:hover .mode{
+    background: var(--color-75);
+}
+
+.theme-dark .theme-mode:hover .mode::after{
+    background: var(--color-cc) ;
+}
+
+.run , .live-btn{
+    cursor: pointer;
+    outline: none;
+    border: none;
+    color: #fff;
+    background: #04aa6d;
+    height: 4rem;
+    padding: .6rem 2.5rem;
+    font-size: 1.8rem;
+    font-weight: 900;
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+}
+
+.run:hover , .live-btn:hover{
+    background: #059862;
+}
+
+.fa-caret-right{
+    margin-left: .8rem; 
+}
+
+.live-btn{
+    text-transform: uppercase;
+}
+
+.container-size{
+    display: none;
+    color: #000;
+    margin-right: 1rem;
+}
+
+.theme-dark .container-size{
+    color: var(--primary-color);
+}
+
+/* section-code */
+
+.section-code{
+    display: flex;
+    height: calc(100% - 5.7rem);
+}
+
+.section-code--horizontal{
+    flex-direction: column;
+}
+
+.section-code__editable , .section-code__result{
+    overflow: scroll;
+    background: #fff;
+    width: calc(50% - .5rem);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.section-code--horizontal .section-code__editable , .section-code--horizontal .section-code__result{
+    width: 100%;
+    height: calc(50% - .5rem);
+}
+
+.theme-dark .section-code__editable{
+    background: rgb(21,32,43);
+    color: #fff;
+}
+
+.container-code , .iframe{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    padding: .5rem;
+    border: none;
+}
+
+.section-code__bar{
+    background: var(--primary-bgColor);
+    width: 1rem;
+    cursor: col-resize;
+}
+
+.section-code--horizontal .section-code__bar{
+    width: 100%;
+    height: 1rem;
+}
