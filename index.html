@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/d6898ed701.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style/style.css">
+    <title>Tryit Editor</title>
+</head>
+<body>       
+    <div class="code-editor">
+        <div class="total-container-btns">
+            <div class="container-btns">
+                <div class="save center transition" title="Save code">
+                    <i class="fa-solid fa-floppy-disk"></i>
+                </div>
+                <div class="rotate center transition" title="Change Orientation">
+                    <i class="fa-solid fa-rotate"></i>
+                </div>
+                <div class="theme-mode center transition" title="Change Theme">
+                    <span class="mode"></span>
+                </div>
+                <button class="run center transition">Run
+                    <i class="fa-solid fa-caret-right"></i>
+                </button>
+                <button class="live-btn transition">
+                    <input type="checkbox" id="checkbox">
+                    live
+                </button>
+            </div>
+            <div class="container-size"></div>
+        </div>
+        <div class="section-code">
+            <div class="section-code__editable">
+                <div class="container-code" contenteditable="">
+                </div>
+            </div>
+            <div class="section-code__bar"></div>
+            <div class="section-code__result">
+                <iframe src="" class="iframe"></iframe>
+            </div>
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>
