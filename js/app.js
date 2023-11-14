@@ -48,6 +48,7 @@ function checkInput(){
 }
 
 function runCode(){
+    console.log(1);
     const html = containerCode.innerText;
     iframe.src = "data:text/html;charset=utf-8," + encodeURI(html)
 }
@@ -94,7 +95,7 @@ function loaded(){
 saveCodeBtn.addEventListener('click' , saveCode)
 rotateBtn.addEventListener('click' , rotate)
 themeMode.addEventListener('click' , setTheme)
-run.addEventListener('click' , runCode())
+run.addEventListener('click' , runCode)
 liveBtn.addEventListener('click' , checkInput)
 bar.addEventListener('mousedown' , resizeSectionCode)
 sectionCode.addEventListener('mouseup' , mouseUpHandler)
